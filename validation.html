@@ -1,13 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validation</title>
+    <link rel="stylesheet" href="validation.css">
 </head>
+
 <body>
+    <header>
+        <div class="hdr">
+            <img src="images/logo_1.png" alt="">
+        </div>
+    </header>
+
+    <section class="mainsection">
+        <div class="main_conatiner">
+            <form action="" id="myForm">
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td><input type="text" class="names" placeholder="Your name.." required id="first_name"></td>
+                    </tr>
+                    <tr>
+                        <td>Middle Name:</td>
+                        <td><input type="text" class="names" placeholder="Your Middle name.." id="middle_name"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:</td>
+                        <td><input type="text" class="names" placeholder="Your last name.." required id="last_name"></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail Address:</td>
+                        <td><input type="email" class="email" placeholder="Your email Address.." required id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="password" id="passwd" placeholder="password.."></td>
+                    </tr>
+                    <tr>
+                        <td>Birthdate:</td>
+                        <td><input type="date" id="brtd" required></td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td><input type="number" id="age" placeholder="Your Age.." required></td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>
+                            <label>
+                                <input type="radio" name="gender" value="male" required id="gender_male"> Male
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female" id="gender_female"> Female
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Interest:</td>
+                        <table>
+                            <tr>
+                                <td class="chekboxes">
+                                    <label>
+                                        <input type="checkbox" name="interest" value="sport" id="interest_sport"> Sport
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="checkbox" name="interest" value="dance" id="interest_dance"> Dance
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="checkbox" name="interest" value="reading" id="interest_reading"> Reading
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="checkbox" name="interest" value="other" id="interest_other"> Other
+                                    </label>
+                                    <br>
+                                    <input type="text" placeholder="Other interest..." id="other_interest">
+                                </td>
+                            </tr>
+                            <br>
+                            <tr>
+                                <td>Job Preferred state 1:</td>
+                                <td>
+                                    <select name="state1" id="state1" required>
+                                        <option value="" disabled selected>Please Select..</option>
+                                        <option value="gujrat">Gujrat</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="mumbai">Mumbai</option>
+                                    </select>
+                                </td>
+                                <td>Job Preferred city 1:</td>
+                                <td>
+                                    <select name="city1" id="city1" required>
+                                        <option value="" disabled selected>Please Select..</option>
+                                        <option value="city1_option1">City 1 Option 1</option>
+                                        <option value="city1_option2">City 1 Option 2</option>
+                                        <option value="city1_option3">City 1 Option 3</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Job Preferred state 2:</td>
+                                <td>Job Preferred city 2:</td>
+                                <td>
+                                    <select name="state2" id="state2" required>
+                                        <option value="" disabled selected>Please Select..</option>
+                                        <option value="gujrat">Gujrat</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="mumbai">Mumbai</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="city2" id="city2" required>
+                                        <option value="" disabled selected>Please Select..</option>
+                                        <option value="city2_option1">City 2 Option 1</option>
+                                        <option value="city2_option2">City 2 Option 2</option>
+                                        <option value="city2_option3">City 2 Option 3</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <td colspan="2">
+                                <label>
+                                    <input type="checkbox" id="terms_and_con"> Terms and Conditions
+                                </label>
+                            </td>
+                        </table>
+                    </tr>
+                </table>
+                <div class="buttons">
+                    <input type="submit" value="Submit" id="submit_button">
+                    <input type="reset" value="Reset" id="reset_button">
+                </div>
+            </form>
+        </div>
+    </section>
     
-    
-    
+    <script src="validation.js"></script>
 </body>
+
 </html>
