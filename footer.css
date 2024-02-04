@@ -1,0 +1,22 @@
+.footer_main{
+    display: flex;
+    width: 100%         ;
+    height: 80px;
+    background-color: rgb(69 72 72);
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text_fot{
+    display: flex;
+    margin-right: 50px;
+  }
+  .logo_fot img{
+    margin-left: 50px;
+    width: 120px;
+  }
+  .contact_us_fot > h4, .faq >h4{
+    font-size: 16px;
+    padding-left: 30px;
+    color: #ffffff;
+  }
+  /* Remove Footer Of Site */

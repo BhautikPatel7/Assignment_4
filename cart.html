@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enjoy Shopping</title>
+    <link rel="stylesheet" href="headerandbgimg.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+
+    </style>
+</head>
+<body>
+   
+    <section id="Home">
+        <div class="image_main" id="mydiv">
+           
+            <div class="imageupper">
+                <header>
+                    <img class="chekbtn" src="images/menu.svg" alt="Menu Icon" style="width: 30px;">
+                    <div class="header_container">
+                        <div class="connect_login_space">
+                            <img src="images/logo_1.png" alt="Volunteer Overseas Header Image">
+                            <h4 class="header_right_part how_its_work mobile_how_it"><a href="#Home" >HOW IT WORKS</a></h4>
+                            <h4 class="header_right_part contact_us_heading"><a href="#Home" >CONTACT US</a></h4>
+                            <div class="rightsection">
+                                <h4><a href="#Home" style="padding-left: 20px; padding-right: 20px; border-radius: 3px;">Login</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+    </section>
+    <div class="main_con">
+        <section id="tabelcon" class="wrapper">
+            <table class="center">
+                <tr class="tabel_head">
+                    <th>Select</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Item Total</th>
+                    <th>Remove</th>
+                </tr>
+                <tbody>
+                    <tr class="row_tb row1" id="tr1">
+                        <td><input type="checkbox" id="first_chekbox"></td>
+                        <td><img src="images/image_blue_shirt.jpg" alt="A formal shirt in blue color"></td>
+                        <td><p>a formal shirt in blue color</p></td>
+                        <td><p id="p1">$40</p></td>
+                        <td><input type="tel" id="quentty"></td>
+                        <td><p id="itm_total1">$</p></td>
+                        <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
+                    </tr>
+                    <tr class="row_tb row2" id="tr2">
+                        <td><input type="checkbox" id="first_chekbox"></td>
+                        <td><img src="images/sadi_img.jpeg" alt="A formal shirt in blue color"></td>
+                        <td><p>a formal shirt in blue color</p></td>
+                        <td><p id="p2">$45</p></td>
+                        <td><input type="tel" id="quentty"></td>
+                        <td><p id="itm_total2">$</p></td>
+                        <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
+                    </tr>
+                    <tr class="row_tb row3" id="tr3">
+                        <td><input type="checkbox" id="first_chekbox"></td>
+                        <td><img src="images/green_sadi.avif" alt="A formal shirt in blue color"></td>
+                        <td><p>a formal shirt in blue color</p></td>
+                        <td><p id="p3">$90</p></td>
+                        <td><input type="tel" id="quentty"></td>
+                        <td><p id="itm_total3">$</p></td>
+                        <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
+                    </tr>
+                    <tr class="row_tb row4" id="tr4">
+                        <td><input type="checkbox" id="first_chekbox"></td>
+                        <td><img src="images/white_img.png" alt="A formal shirt in blue color"></td>
+                        <td><p>a formal shirt in blue color</p></td>
+                        <td><p id="p4">$67.08</p></td>
+                        <td><input type="tel" id="quentty" ></td>
+                        <td><p id="itm_total4">$</p></td>
+                        <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="describe">
+                <div class="box">
+                    <table class="last_tb">
+                        <tr>
+                            <td>Total Iteam:</td>
+                            <td id="ttl_itm"></td>
+                        </tr>
+                        <tr>
+                            <td>Sub Total:$</td>
+                            <td id="sub_ttl"></td>
+                        </tr>
+                        <tr>
+                            <td>GST(18%):</td>
+                            <td id="gst_cnt"></td>
+                        </tr>
+                        <tr>
+                            <td>Total:$</td>
+                            <td id="ttl_money"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="chkt_btn" id="chekout_btn">Chekout</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Footer Goes Here -->
+    <footer>
+        <div class="footer_main">
+          <div class="logo_fot">
+            <img src="images/logo_1.png" alt="Footer Logo">
+          </div>
+          <div class="text_fot">
+            <div class="faq">
+              <h4>faq</h4>
+            </div>
+            <div class="contact_us_fot">
+              <h4>Contact Us</h4>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script src="cart.js">
+
+      </script>
+</body>
+</html>
