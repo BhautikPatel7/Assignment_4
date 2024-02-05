@@ -12,7 +12,6 @@
     </style>
 </head>
 <body>
-   
     <section id="Home">
         <div class="image_main" id="mydiv">
            
@@ -48,37 +47,37 @@
                 <tbody>
                     <tr class="row_tb row1" id="tr1">
                         <td><input type="checkbox" id="first_chekbox"></td>
-                        <td><img src="images/image_blue_shirt.jpg" alt="A formal shirt in blue color"></td>
+                        <td><img src="images/image_blue_shirt.jpg" alt="A formal shirt in blue color" onclick="this.requestFullscreen()"></td>
                         <td><p>a formal shirt in blue color</p></td>
                         <td><p id="p1">$40</p></td>
-                        <td><input type="tel" id="quentty"></td>
+                        <td><input type="tel" id="quentty" oninput=" this.value = this.value.replace(/[A-Z,a-z]/gi,'')"></td>
                         <td><p id="itm_total1">$</p></td>
                         <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
                     </tr>
                     <tr class="row_tb row2" id="tr2">
                         <td><input type="checkbox" id="first_chekbox"></td>
-                        <td><img src="images/sadi_img.jpeg" alt="A formal shirt in blue color"></td>
+                        <td><img src="images/sadi_img.jpeg" alt="A formal shirt in blue color" onclick="this.requestFullscreen()"></td>
                         <td><p>a formal shirt in blue color</p></td>
                         <td><p id="p2">$45</p></td>
-                        <td><input type="tel" id="quentty"></td>
+                        <td><input type="tel" id="quentty" oninput=" this.value = this.value.replace(/[A-Z,a-z]/gi,'')"></td>
                         <td><p id="itm_total2">$</p></td>
                         <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
                     </tr>
                     <tr class="row_tb row3" id="tr3">
                         <td><input type="checkbox" id="first_chekbox"></td>
-                        <td><img src="images/green_sadi.avif" alt="A formal shirt in blue color"></td>
+                        <td><img src="images/green_sadi.avif" alt="A formal shirt in blue color" onclick="this.requestFullscreen()"></td>
                         <td><p>a formal shirt in blue color</p></td>
                         <td><p id="p3">$90</p></td>
-                        <td><input type="tel" id="quentty"></td>
+                        <td><input type="tel" id="quentty" oninput=" this.value = this.value.replace(/[A-Z,a-z]/gi,'')"></td>
                         <td><p id="itm_total3">$</p></td>
                         <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
                     </tr>
                     <tr class="row_tb row4" id="tr4">
                         <td><input type="checkbox" id="first_chekbox"></td>
-                        <td><img src="images/white_img.png" alt="A formal shirt in blue color"></td>
+                        <td><img src="images/white_img.png" alt="A formal shirt in blue color" onclick="this.requestFullscreen()"></td>
                         <td><p>a formal shirt in blue color</p></td>
                         <td><p id="p4">$67.08</p></td>
-                        <td><input type="tel" id="quentty" ></td>
+                        <td><input type="tel" id="quentty" oninput=" this.value = this.value.replace(/[A-Z,a-z]/gi,'')"></td>
                         <td><p id="itm_total4">$</p></td>
                         <td><button type="button" class="remove_btn" onclick="Removetext(this)">x</button></td>
                     </tr>
@@ -131,7 +130,7 @@
       </footer>
 
       <script src="cart.js">
-
       </script>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 </html>

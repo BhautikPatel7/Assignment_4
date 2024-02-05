@@ -124,10 +124,14 @@ function handleCheckout() {
     var deliveryDate = new Date();
     deliveryDate.setDate(currentDate.getDate() + 45);
     var formattedDeliveryDate = formatDate2(deliveryDate);
-
+    if(totalItems == 0){
+        alert("Add At least One Iteam")
+    }
+    else{
     // Display alert with formatted checkout information 
     var confirmationMessage = "Total Items: " + totalItems + "\nTotal Amount: " + totalAmount + "\nBill Date: " + formattedCurrentDate + "\nDelivery Date: " + formattedDeliveryDate;
     var isConfirmed = confirm(confirmationMessage + "\n\nDo you want to confirm your order?");
+    }
 
     if (isConfirmed) {
         alert("Order confirmed! Redirecting to payment page...");
