@@ -1,0 +1,338 @@
+<html>
+
+<head>
+</head>
+
+<body>
+  <form name="myform">
+    <h1>
+      <center> Admission form </center>
+    </h1>
+    <center>
+      <tr>
+        <td>Name :</td>
+        <td><input type="text" name="usrname" PlaceHolder="Enter Your First Name" required></td>
+      </tr>
+
+      <tr>
+        <td> Email ID :</td>
+        <td><input type="text" name="usremail" PlaceHolder="Enter Your email address" pattern="[^@]+@[a-zA-Z]+\.[a-zA-Z]{2,6}" required></td>
+      </tr>
+
+      <tr>
+        <td>Age :</td>
+        <td><input type="number" name="usrage" PlaceHolder="Enter Your Age" required></td>
+      </tr>
+
+      <tr>
+        <td>Dept :</td>
+        <td><input type="text" name="usrdpt" PlaceHolder="Enter Dept"></td>
+      </tr>
+
+      <tr>
+        <td>College :</td>
+        <td><input type="text" name="usrclg" PlaceHolder="Enter college"></td>
+      </tr>
+    </center>
+
+    <center>
+      <br>
+      <br>
+      <tr>
+        <td>
+          <Button type="button" onclick="validateform()" id="Add">Add</button>
+        </td>
+        <td>
+          <Button type="button" onclick="onUpdatefunction()" style="display:none;" id="update">update</button>
+        </td>
+        <td><button type="reset">Reset</button></td>
+      </tr>
+    </center>
+    <br><br>
+    <center>
+      <table id="mytable" border="1">
+        <tr>
+          <th>SNO</th>
+          <th>Name</th>
+          <th>Email ID</th>
+          <th>Age</th>
+          <th>Dept</th>
+          <th>College</th>
+        </tr>
+    </center>
+    </table>
+  </form>
+
+  <script>
+
+
+    var selectedRow = null;
+
+function validateform() {
+
+  var table = document.getElementById("mytable");
+  var rowCount = table.rows.length;
+  console.log(rowCount);
+
+  var x = document.forms["myform"]["usrname"].value;
+  if (x == "") {
+    alert("name must be filled out");
+    return false;
+  }
+
+  var y = document.forms["myform"]["usremail"].value;
+  if (y == "") {
+    alert("email must be filled out");
+    return false;
+  }
+  var mail = /[^@]+@[a-zA-Z]+\.[a-zA-Z]{2,6}/
+  if (mail.test(y)) {
+    //alert("email must be a valid format");
+    //return false ;
+  } else {
+    alert("not a mail id")
+    return false;
+  }
+
+  var z = document.forms["myform"]["usrage"].value;
+  if (z == "") {
+    alert("age must be filled out");
+    return false;
+  }
+
+  if (isNaN(z) || z < 1 || z > 100) {
+    alert("The age must be a number between 1 and 100");
+    return false;
+  }
+
+  var a = document.forms["myform"]["usrdpt"].value;
+  if (a == "") {
+    alert("Dept must be filled out");
+    return false;
+  }
+
+  var dept = "`@#$%^&*()+=-[]\\\';,./{}|\":<>?~_";
+  if (dept.match(a)) {
+    alert("special charachers found");
+    return false;
+  }
+
+  var b = document.forms["myform"]["usrclg"].value;
+  if (b == "") {
+    alert("College must be filled out");
+    return false;
+  }
+  console.log(table);
+  var row = table.insertRow(rowCount);
+  row.setAttribute('id', rowCount);
+  var cell0 = row.insertCell(0);
+  var cell1 = row.insertCell(1);
+  var cell2 = row.insertCell(2);
+  var cell3 = row.insertCell(3);
+  var cell4 = row.insertCell(4);
+  var cell5 = row.insertCell(5);
+  var cell6 = row.insertCell(6);
+  var cell7 = row.insertCell(7);
+
+
+  cell0.innerHTML = rowCount;
+  cell1.innerHTML = x;
+  cell2.innerHTML = y;
+  cell3.innerHTML = z;
+  cell4.innerHTML = a;
+  cell5.innerHTML = b;
+  cell6.innerHTML = '<Button type="button" onclick=onEdit("' + x + '","' + y + '","' + z + '","' + a + '","' + b + '","' + rowCount + '")>Edit</BUTTON>';
+  cell7.innerHTML = '<Button type="button" onclick=deletefunction(' + rowCount + ')>Delete</BUTTON>';
+
+}
+
+function emptyfunction() {
+  document.getElementById("usrname").value = "";
+  document.getElementById("usremail").value = "";
+  document.getElementById("usrage").value = "";
+  document.getElementById("usrdpt").value = "";
+  document.getElementById("usrclg").value = "";
+}
+
+function onEdit(x, y, z, a, b, rowCount) {
+  selectedRow = rowCount;
+  console.log(selectedRow);
+  document.forms["myform"]["usrname"].value = x;
+  document.forms["myform"]["usremail"].value = y;
+  document.forms["myform"]["usrage"].value = z;
+  document.forms["myform"]["usrdpt"].value = a;
+  document.forms["myform"]["usrclg"].value = b;
+  document.getElementById('Add').style.display = 'none';
+  document.getElementById('update').style.display = 'block';
+}
+
+function deletefunction(rowCount) {
+  document.getElementById("mytable").deleteRow(rowCount);
+}
+
+function onUpdatefunction() {
+  var row = document.getElementById(selectedRow);
+  console.log(row);
+
+  var x = document.forms["myform"]["usrname"].value;
+  if (x == "") {
+    alert("name must be filled out");
+    document.myForm.x.focus();
+    return false;
+  }
+
+  var y = document.forms["myform"]["usremail"].value;
+  if (y == "") {
+    alert("email must be filled out");
+    document.myForm.y.focus();
+    return false;
+  }
+
+  var mail = /[^@]+@[a-zA-Z]+\.[a-zA-Z]{2,6}/
+  if (mail.test(y)) {
+    //alert("email must be a valid format");
+    //return false ;
+  } else {
+    alert("not a mail id");
+
+    return false;
+  }
+
+  var z = document.forms["myform"]["usrage"].value;
+  if (z == "") {
+    alert("age must be filled out");
+    document.myForm.z.focus();
+    return false;
+  }
+  if (isNaN(z) || z < 1 || z > 100) {
+    alert("The age must be a number between 1 and 100");
+    return false;
+  }
+
+  var a = document.forms["myform"]["usrdpt"].value;
+  if(b == "") {
+    alert("College must be filled out");
+    return false;
+  }
+  console.log(table);
+  var row = table.insertRow(rowCount);
+  row.setAttribute('id', rowCount);
+  var cell0 = row.insertCell(0);
+  var cell1 = row.insertCell(1);
+  var cell2 = row.insertCell(2);
+  var cell3 = row.insertCell(3);
+  var cell4 = row.insertCell(4);
+  var cell5 = row.insertCell(5);
+  var cell6 = row.insertCell(6);
+  var cell7 = row.insertCell(7);
+  
+  cell0.innerHTML = rowCount;
+  cell1.innerHTML = x;
+  cell2.innerHTML = y;
+  cell3.innerHTML = z;
+  cell4.innerHTML = a;
+  cell5.innerHTML = b;
+  cell6.innerHTML = '<Button type="button" onclick=onEdit("' + x + '","' + y + '","' + z + '","' + a + '","' + b + '","' + rowCount + '")>Edit</BUTTON>';
+  cell7.innerHTML = '<Button type="button" onclick=deletefunction(' + rowCount + ')>Delete</BUTTON>';
+
+}
+
+function emptyfunction() {
+  document.getElementById("usrname").value = "";
+  document.getElementById("usremail").value = "";
+  document.getElementById("usrage").value = "";
+  document.getElementById("usrdpt").value = "";
+  document.getElementById("usrclg").value = "";
+}
+
+function onEdit(x, y, z, a, b, rowCount) {
+  selectedRow = rowCount;
+  console.log(selectedRow);
+  document.forms["myform"]["usrname"].value = x;
+  document.forms["myform"]["usremail"].value = y;
+  document.forms["myform"]["usrage"].value = z;
+  document.forms["myform"]["usrdpt"].value = a;
+  document.forms["myform"]["usrclg"].value = b;
+  document.getElementById('Add').style.display = 'none';
+  document.getElementById('update').style.display = 'block';
+}
+
+function deletefunction(rowCount) {
+  document.getElementById("mytable").deleteRow(rowCount);
+}
+
+function onUpdatefunction() {
+  var row = document.getElementById(selectedRow);
+  console.log(row);
+
+  var x = document.forms["myform"]["usrname"].value;
+  if (x == "") {
+    alert("name must be filled out");
+    document.myForm.x.focus();
+    return false;
+  }
+
+  var y = document.forms["myform"]["usremail"].value;
+  if (y == "") {
+    alert("email must be filled out");
+    document.myForm.y.focus();
+    return false;
+  }
+
+  var mail = /[^@]+@[a-zA-Z]+\.[a-zA-Z]{2,6}/
+  if (mail.test(y)) {
+    //alert("email must be a valid format");
+    //return false ;
+  } else {
+    alert("not a mail id");
+
+    return false;
+  }
+
+  var z = document.forms["myform"]["usrage"].value;
+  if (z == "") {
+    alert("age must be filled out");
+    document.myForm.z.focus();
+    return false;
+  }
+  if (isNaN(z) || z < 1 || z > 100) {
+    alert("The age must be a number between 1 and 100");
+    return false;
+  }
+
+  var a = document.forms["myform"]["usrdpt"].value;
+  if (a == "") {
+    alert("Dept must be filled out");
+    return false;
+  }
+  var letters = /^[A-Za-z]+$/;
+  if (a.test(letters)) {
+    //Your logice will be here.
+  } else {
+    alert("Please enter only alphabets");
+    return false;
+  }
+
+  var b = document.forms["myform"]["usrclg"].value;
+  if (b == "") {
+    alert("College must be filled out");
+    return false;
+  }
+  var letters = /^[A-Za-z]+$/;
+  if (b.test(letters)) {
+    //Your logice will be here.
+  } else {
+    alert("Please enter only alphabets");
+    return false;
+  }
+
+  row.cells[1].innerHTML = x;
+  row.cells[2].innerHTML = y;
+  row.cells[3].innerHTML = z;
+  row.cells[4].innerHTML = a;
+  row.cells[5].innerHTML = b;
+}
+  </script>
+</body>
+
+</html>

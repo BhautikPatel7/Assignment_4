@@ -8,7 +8,7 @@ function updateTotals() {
         var checkbox = row.querySelector('input[type="checkbox"]');
         if (checkbox.checked) {
             var quantity = parseFloat(row.querySelector('#quentty').value) || 0;
-            var rowNumber = row.classList[1].substring(3); // Extract the row number from class (row1, row2, ...)
+            var rowNumber = row.classList[1].substring(3);
             var priceId = 'p' + rowNumber;
             var price = parseFloat(row.querySelector('#' + priceId).innerText.replace('$', '')) || 0;
 
@@ -21,7 +21,6 @@ function updateTotals() {
 
     // Calculate GST 
     gst = 0.18 * subTotal;
-
     // Update the DOM with the calculated values
     document.getElementById('ttl_itm').innerText = totalItems;
     document.getElementById('sub_ttl').innerText = '$' + subTotal.toFixed(2);
@@ -100,7 +99,7 @@ updateTotals();
 // Function to format date as dd/mm/yyyy
 function formatDate1(date) {
     var day = date.getDate();
-    var month = date.getMonth() + 1; 
+    var month = date.getMonth() + 1;
     var year = date.getFullYear();
 
     return `${day}/${month}/${year}`;
@@ -129,7 +128,7 @@ function handleCheckout() {
     // Display alert with formatted checkout information 
     var confirmationMessage = "Total Items: " + totalItems + "\nTotal Amount: " + totalAmount + "\nBill Date: " + formattedCurrentDate + "\nDelivery Date: " + formattedDeliveryDate;
     var isConfirmed = confirm(confirmationMessage + "\n\nDo you want to confirm your order?");
-    
+
     if (isConfirmed) {
         alert("Order confirmed! Redirecting to payment page...");
     } else {
