@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td>E-mail Address:</td>
-                        <td><input type="text" class="email" placeholder="Your email Address.."  id="email">
+                        <td><input type="text" name="mail" class="email" placeholder="Your email Address.."  id="email">
                         </td>
                     </tr>
                     <tr>
@@ -46,21 +46,21 @@
                     </tr>
                     <tr>
                         <td>Birthdate:</td>
-                        <td><input input type="text" placeholder="MM/DD/YYYY"
+                        <td><input input type="text" name="btd" placeholder="MM/DD/YYYY"
                             onfocus="(this.type='date')" id="brthd"></td>
                     </tr>
                     <tr>
                         <td>Age:</td>
-                        <td><input type="number" id="age" placeholder="Your Age.."></td>
+                        <td><input type="number" name="Age" id="age" placeholder="Your Age.."></td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
                         <td>
                             <label>
-                                <input type="radio" name="gender" value="male"  id="gender_male"> Male
+                                <input type="radio" name="gender" value="male" class="male" id="gender_male"> Male
                             </label>
                             <label>
-                                <input type="radio" name="gender" value="female" id="gender_female"> Female
+                                <input type="radio" name="gender" value="female" class="female" id="gender_female"> Female
                             </label>
                         </td>
                     </tr>
@@ -80,7 +80,7 @@
                                         <input type="checkbox" name="interest" value="other" id="interest_other">
                                         <label for="other">Other</label>
                                         <br>
-                                        <input type="text" class="tdg" id="tgg" placeholder="Other Intrest">
+                                        <input type="text" class="tdg" id="tgg" placeholder="Other Intrest" disabled>
                                     </td>
                                 </tr>
                                 <tr>
@@ -140,7 +140,7 @@
 
                 </table>
                 <div class="buttons">
-                    <input type="submit" value="Submit" id="submit_button" onclick="validateform()">
+                    <input type="submit" value="Submit" id="submit_button" onclick=" validateform();">
                     <input type="reset" value="cancel" id="reset_button">
                 </div>
             </form>
