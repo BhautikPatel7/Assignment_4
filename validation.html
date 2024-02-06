@@ -20,7 +20,7 @@
 
     <section class="mainsection">
         <div class="main_conatiner">
-            <form action="" id="myForm" name="myform" >
+            <form action="" id="myForm" name="myform" onsubmit="return validateform()">
                 <table>
                     <tr>
                         <td>First Name:</td>
@@ -57,10 +57,10 @@
                         <td>Gender:</td>
                         <td>
                             <label>
-                                <input type="radio" name="gender" value="male" class="male" id="gender_male"> Male
+                                <input type="radio" name="gender_male" value="male" class="male" id="gender_male"> Male
                             </label>
                             <label>
-                                <input type="radio" name="gender" value="female" class="female" id="gender_female"> Female
+                                <input type="radio" name="gender_female" value="female" class="female" id="gender_female"> Female
                             </label>
                         </td>
                     </tr>
@@ -80,52 +80,54 @@
                                         <input type="checkbox" name="interest" value="other" id="interest_other">
                                         <label for="other">Other</label>
                                         <br>
-                                        <input type="text" class="tdg" id="tgg" placeholder="Other Intrest" disabled>
+                                        <input type="text" class="tdg" id="tgg" placeholder="Other Intrest" name="othertext" disabled>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Job Preferred state 1:</td>
-                                    <td>Job Preferred state 1:</td>
+                                    <td>Job Preferred city 1:</td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select name="state1" id="state1" >
-                                            <option value="" disabled selected>Please Select..</option>
-                                            <option value="gujrat">Gujrat</option>
-                                            <option value="delhi">Delhi</option>
-                                            <option value="mumbai">Mumbai</option>
+                                        <select name="owner" id="owner" class="positionTypes">
+                                            <option value="0" disabled selected>Please Select..</option>
+                                            <option value="1" id="option1">Gujrat</option>
+                                            <option value="2" id="option1">Delhi</option>
+                                            <option value="3" id="option1">Maharastra</option>
                                         </select>
                                     </td>
                                     <td>
-                                        <select name="state1" id="state1" >
-                                            <option value="" disabled selected>Please Select..</option>
-                                            <option value="gujrat">Gujrat</option>
-                                            <option value="delhi">Delhi</option>
-                                            <option value="mumbai">Mumbai</option>
+                                        <select name="co-owner" id="co-owner" class="positionTypes_hyy">
+                                            <option value="4"  selected disabled>Please Select..</option>
+                                            <option value="5">Rajkot</option>
+                                            <option value="6">pune</option>
+                                            <option value="7">Noida</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Job Preferred state 1:</td>
-                                    <td>Job Preferred state 1:</td>
+                                    <td>Job Preferred state 2:</td>
+                                    <td>Job Preferred City 2:</td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select name="state1" id="state1">
-                                            <option value="" disabled selected>Please Select..</option>
-                                            <option value="gujrat">Gujrat</option>
-                                            <option value="delhi">Delhi</option>
-                                            <option value="mumbai">Mumbai</option>
+                                        <select name="owner1" id="owner1" class="positionTypes">
+                                            <option value="0"  selected disabled>Please Select..</option>
+                                            <option value="1">Gujrat</option>
+                                            <option value="2">Delhi</option>
+                                            <option value="3">Maharastra</option>
                                         </select>
                                     </td>
+                                    
                                     <td>
-                                        <select name="state1" id="state1" >
-                                            <option value="" disabled selected>Please Select..</option>
-                                            <option value="gujrat">Gujrat</option>
-                                            <option value="delhi">Delhi</option>
-                                            <option value="mumbai">Mumbai</option>
+
+                                        <select name="co-owner1" id="co-owner1" class="positionTypes_hyy">
+                                            <option value="4"  selected disabled>Please Select..</option>
+                                            <option value="5">Rajkot</option>
+                                            <option value="6">Pune</option>
+                                            <option value="7">Noida</option>
                                         </select>
-                                    </td>
+                                    </td> 
                                 </tr>
                                 <tr>
                                     <td>
@@ -140,7 +142,7 @@
 
                 </table>
                 <div class="buttons">
-                    <input type="submit" value="Submit" id="submit_button" onclick=" validateform();">
+                    <input type="submit" value="Submit" id="submit_button" >
                     <input type="reset" value="cancel" id="reset_button">
                 </div>
             </form>
@@ -149,6 +151,7 @@
 
     <!-- <script src="validation.js"></script> -->
     <script src="validation1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 
 </html>
