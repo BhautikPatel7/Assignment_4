@@ -45,12 +45,14 @@ function handleQuantityChange(input) {
     var priceId = 'p' + rowNumber;
     var price = parseFloat(row.querySelector('#' + priceId).innerText.replace('$', '')) || 0;
     var quantity = parseFloat(input.value) || 0;
-    if (isNaN(quantity) || quantity < 0) {
-        input.value = 0;
-        quantity = 0;
+    
+    // Check if the entered quantity exceeds 500
+    if (quantity > 500) {
+        input.value = 500; // Limit the quantity to 500
+        quantity = 500; // Update the quantity variable
     }
 
-    // Update item total with new quantity
+    // Update item total with new quantity only if within range
     updateItemTotal(row, quantity * price);
     updateTotals();
 
@@ -66,6 +68,8 @@ function handleQuantityChange(input) {
 
     document.getElementById('ttl_itm').innerText = totalItems;
 }
+
+
 
 
 // Function to handle removing an item
