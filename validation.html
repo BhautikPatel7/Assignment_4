@@ -28,15 +28,15 @@
                 <table>
                     <tr>
                         <td>First Name:</td>
-                        <td><input type="text" name="text1" class="names" placeholder="Your name.."  id="first_name"></td>
+                        <td><input type="text" name="text1" class="names" placeholder="Your name.."  id="first_name" onkeydown="return /[a-zA-Z]/i.test(event.key)"></td>
                     </tr>
                     <tr>
                         <td>Middle Name:</td>
-                        <td><input type="text" name="text2"  class="names" placeholder="Your Middle name.." id="middle_name"></td>
+                        <td><input type="text" name="text2"  class="names" placeholder="Your Middle name.." id="middle_name" onkeydown="return /[a-zA-Z]/i.test(event.key)"></td>
                     </tr>
                     <tr>
                         <td>Last Name:</td>
-                        <td><input type="text" name="text3" class="names" placeholder="Your last name.."  id="last_name">
+                        <td><input type="text" name="text3" class="names" placeholder="Your last name.."  id="last_name" onkeydown="return /[a-zA-Z]/i.test(event.key)">
                         </td>
                     </tr>
                     <tr>
@@ -55,7 +55,7 @@
                     </tr>
                     <tr>
                         <td>Age:</td>
-                        <td><input type="number" name="Age" id="age" placeholder="Your Age.."></td>
+                        <td><input type="tel" name="Age" id="age" placeholder="Your Age.." onkeypress="return isNumberKey(event)" ></td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
@@ -156,6 +156,14 @@
     <!-- <link rel="stylesheet" href="new.js"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        function isNumberKey(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+    return false;
+  return true;
+}
+    </script>
 </body>
 
 </html>
