@@ -7,12 +7,12 @@
     <title>Validation</title>
     <link rel="stylesheet" href="validation.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<style>
-    .error {
-        border: 1px solid red;
-    }
-</style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        .error {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,20 +28,23 @@
                 <table>
                     <tr>
                         <td>First Name:</td>
-                        <td><input type="text" name="text1" class="names" placeholder="Your name.."  id="first_name" onkeydown="return /[a-zA-Z]/i.test(event.key)"></td>
+                        <td><input type="text" name="text1" class="names" placeholder="Your name.." id="first_name"
+                                onkeydown="return /[a-zA-Z]/i.test(event.key)"></td>
                     </tr>
                     <tr>
                         <td>Middle Name:</td>
-                        <td><input type="text" name="text2"  class="names" placeholder="Your Middle name.." id="middle_name" onkeydown="return /[a-zA-Z]/i.test(event.key)"></td>
+                        <td><input type="text" name="text2" class="names" placeholder="Your Middle name.."
+                                id="middle_name" onkeydown="return /[a-zA-Z]/i.test(event.key)"></td>
                     </tr>
                     <tr>
                         <td>Last Name:</td>
-                        <td><input type="text" name="text3" class="names" placeholder="Your last name.."  id="last_name" onkeydown="return /[a-zA-Z]/i.test(event.key)">
+                        <td><input type="text" name="text3" class="names" placeholder="Your last name.." id="last_name"
+                                onkeydown="return /[a-zA-Z]/i.test(event.key)">
                         </td>
                     </tr>
                     <tr>
                         <td>E-mail Address:</td>
-                        <td><input type="text" name="mail" class="email" placeholder="Your email Address.."  id="email">
+                        <td><input type="text" name="mail" class="email" placeholder="Your email Address.." id="email">
                         </td>
                     </tr>
                     <tr>
@@ -50,12 +53,13 @@
                     </tr>
                     <tr>
                         <td>Birthdate:</td>
-                        <td><input input type="text" name="btd" placeholder="MM/DD/YYYY"
-                            onfocus="(this.type='date')" id="brthd"></td>
+                        <td><input input type="text" name="btd" placeholder="MM/DD/YYYY" onfocus="(this.type='date')"
+                                id="brthd"></td>
                     </tr>
                     <tr>
                         <td>Age:</td>
-                        <td><input type="tel" name="Age" id="age" placeholder="Your Age.." onkeypress="return isNumberKey(event)" ></td>
+                        <td><input type="tel" name="Age" id="age" placeholder="Your Age.."
+                                onkeypress="return isNumberKey(event)"></td>
                     </tr>
                     <tr>
                         <td>Gender:</td>
@@ -64,7 +68,8 @@
                                 <input type="radio" name="gender_male" value="male" class="male" id="gender_male"> Male
                             </label>
                             <label>
-                                <input type="radio" name="gender_female" value="female" class="female" id="gender_female"> Female
+                                <input type="radio" name="gender_female" value="female" class="female"
+                                    id="gender_female"> Female
                             </label>
                         </td>
                     </tr>
@@ -84,7 +89,8 @@
                                         <input type="checkbox" name="interest" value="other" id="interest_other">
                                         <label for="other">Other</label>
                                         <br>
-                                        <input type="text" class="tdg" id="tgg" placeholder="Other Intrest" name="othertext" disabled>
+                                        <input type="text" class="tdg" id="tgg" placeholder="Other Intrest"
+                                            name="othertext" disabled>
                                     </td>
                                 </tr>
                                 <tr>
@@ -102,7 +108,7 @@
                                     </td>
                                     <td>
                                         <select name="co-owner" id="co-owner" class="positionTypes_hyy">
-                                            <option value="4"  selected disabled>Please Select..</option>
+                                            <option value="4" selected disabled>Please Select..</option>
                                             <option value="5">Rajkot</option>
                                             <option value="6">pune</option>
                                             <option value="7">Noida</option>
@@ -116,28 +122,28 @@
                                 <tr>
                                     <td>
                                         <select name="owner1" id="owner1" class="positionTypes">
-                                            <option value="0"  selected disabled>Please Select..</option>
+                                            <option value="0" selected disabled>Please Select..</option>
                                             <option value="1">Gujrat</option>
                                             <option value="2">Delhi</option>
                                             <option value="3">Maharastra</option>
                                         </select>
                                     </td>
-                                    
+
                                     <td>
 
                                         <select name="co-owner1" id="co-owner1" class="positionTypes_hyy">
-                                            <option value="4"  selected disabled>Please Select..</option>
+                                            <option value="4" selected disabled>Please Select..</option>
                                             <option value="5">Rajkot</option>
                                             <option value="6">Pune</option>
                                             <option value="7">Noida</option>
                                         </select>
-                                    </td> 
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                    <input type="checkbox" name=" termas and Condtion" id="terms_and_con">
-                                    <label for="terms and Conditions">Terms & Condition</label>
-                                </td>
+                                        <input type="checkbox" name=" termas and Condtion" id="terms_and_con">
+                                        <label for="terms and Conditions">Terms & Condition</label>
+                                    </td>
                                 </tr>
                             </table>
                         </td>
@@ -146,7 +152,7 @@
 
                 </table>
                 <div class="buttons">
-                    <input type="submit" value="Submit" id="submit_button" >
+                    <input type="submit" value="Submit" id="submit_button">
                     <input type="reset" value="cancel" id="reset_button">
                 </div>
             </form>
@@ -158,11 +164,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         function isNumberKey(evt) {
-  var charCode = (evt.which) ? evt.which : evt.keyCode
-  if (charCode > 31 && (charCode < 48 || charCode > 57))
-    return false;
-  return true;
-}
+            var charCode = (evt.which) ? evt.which : evt.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
     </script>
 </body>
 
