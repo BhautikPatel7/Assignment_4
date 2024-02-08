@@ -108,6 +108,15 @@ function validateform() {
     } else {
         bordernormal("email");
     }
+    
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!re.test(email)) {
+        alert("Enter A Valid email");
+        bordercolor("email");
+        return false;
+    } else {
+        bordernormal("email");
+    }
 
     // Password Validation
     var password = document.getElementById("passwd").value;
@@ -153,7 +162,7 @@ function validateform() {
     var currentDate = new Date();
 
     // Check if the selected date is in the future
-    if (selectedDate > currentDate) {
+    if (selectedDate.setHours(0,0,0,0) >= currentDate.setHours(0,0,0,0)) {
         alert("Please select a valid Birthdate");
         bordercolor("brthd");
         return false;
